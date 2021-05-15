@@ -74,6 +74,7 @@
     <Content Include="Anasayfa.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="LoginStyle.css" />
+    <Content Include="Rapor.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Resimler\Arpa.jpg" />
     <Content Include="Resimler\bugday.jpg" />
@@ -120,6 +121,13 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rapor.aspx.cs">
+      <DependentUpon>Rapor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rapor.aspx.designer.cs">
+      <DependentUpon>Rapor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
