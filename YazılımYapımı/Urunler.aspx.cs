@@ -15,7 +15,7 @@ namespace YazılımYapımı
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			UrunKategoriID = Request.QueryString["UrunKategoriID"];
-			id = "1";
+			id = Session["KullaniciID"].ToString();
 			SqlCommand komut = new SqlCommand("SELECT*FROM UrunDetay u inner join KullaniciBilgi k on k.KullaniciID=U.KullaniciID WHERE U.UrunKategoriID=@p1 AND k.KullaniciID!=@p2",bgl.baglanti());
 			komut.Parameters.AddWithValue("@p1",UrunKategoriID);
 			komut.Parameters.AddWithValue("@p2", id);

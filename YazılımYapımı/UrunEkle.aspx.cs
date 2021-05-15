@@ -24,7 +24,7 @@ namespace YazılımYapımı
 		{
 			kategoriID = int.Parse(DropDownList1.SelectedValue.ToString());
 			SqlCommand komut = new SqlCommand("insert into UrunDetay  (UrunKategoriID,UrunAd,UrunAdet,KullaniciID,UrunFiyat) values(@p1,@p2,@p3,@p4,@p5) ",bgl.baglanti());
-			k.KullaniciID = 1;
+			k.KullaniciID = Convert.ToInt32(Session["KullaniciID"]);
 			komut.Parameters.AddWithValue("@p1",kategoriID);
 			komut.Parameters.AddWithValue("@p2",TxtUrunad.Text);
 			komut.Parameters.AddWithValue("@p3",TxtAdet.Text);

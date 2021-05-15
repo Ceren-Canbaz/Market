@@ -14,7 +14,7 @@ namespace YazılımYapımı
 		protected void Page_Load(object sender, EventArgs e)
 		{
 
-			ent.KullaniciID = 1;
+			ent.KullaniciID = Convert.ToInt32(Session["KullaniciID"]);
 			SqlCommand komut = new SqlCommand("SELECT*FROM KullaniciBilgi WHERE KullaniciID=@p1",bgl.baglanti());
 			komut.Parameters.AddWithValue("@p1", ent.KullaniciID);
 			SqlDataReader dr = komut.ExecuteReader();

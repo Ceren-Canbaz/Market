@@ -12,7 +12,7 @@ namespace YazılımYapımı
     public partial class Login : System.Web.UI.Page
     {
         Baglanti bgl = new Baglanti();
-
+        string KullaniciID = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             
@@ -37,6 +37,8 @@ namespace YazılımYapımı
             }
             else if (dr2.Read())
             {
+                KullaniciID = dr2["KullaniciID"].ToString();
+                Session.Add("KullaniciID", KullaniciID);
                 Response.Redirect("Anasayfa.aspx");
 			}
             else

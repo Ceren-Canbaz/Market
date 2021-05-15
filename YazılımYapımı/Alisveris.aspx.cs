@@ -31,7 +31,7 @@ namespace YazılımYapımı
 
 			
 			SqlCommand komut = new SqlCommand("Select*From KullaniciBilgi WHERE KullaniciID=@p1", bgl.baglanti());
-			a.KullaniciID =1;
+			a.KullaniciID = Convert.ToInt32(Session["KullaniciID"]);
 			komut.Parameters.AddWithValue("@p1", a.KullaniciID);
 			SqlDataReader dr1 = komut.ExecuteReader();
 
