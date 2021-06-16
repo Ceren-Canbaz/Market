@@ -2,6 +2,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+	<form id="form1" runat="server">
+	<div class="container">
+		<asp:Label ID="Label1" runat="server" Text="Fiyat Belirleyin"></asp:Label>
+		<asp:TextBox ID="TextBox1" CssClass="form-control" runat="server"></asp:TextBox>
+		<br />
+		<asp:Button ID="Button1" runat="server" Text="Filtrele" OnClick="Button1_Click" />
+		<br />
 	<table class="table table-bordered table-hover">
 		<tr>
 			<th>Satıcı</th>
@@ -25,6 +32,7 @@
 				</asp:Repeater>
 			</tbody>
 		</tr>
-
 	</table>
+		</div>
+	</form>
 </asp:Content>

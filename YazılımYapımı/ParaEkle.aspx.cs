@@ -25,7 +25,6 @@ namespace YazilimYapimi
 			TxtPara.Enabled = false;
 			dr.Close();
 			
-			
 		}
 
 		protected void Button1_Click(object sender, EventArgs e)
