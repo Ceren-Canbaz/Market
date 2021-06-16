@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 
-namespace YazılımYapımı
+namespace YazilimYapimi
 {
 	public partial class Anasayfa : System.Web.UI.Page
 	{

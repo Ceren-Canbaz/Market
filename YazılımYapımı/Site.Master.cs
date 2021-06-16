@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace YazılımYapımı
+namespace YazilimYapimi
 {
 	public partial class Site : System.Web.UI.MasterPage
 	{

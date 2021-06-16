@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace YazılımYapımı
+namespace YazilimYapimi
 {
     public partial class Login : System.Web.UI.Page
     {

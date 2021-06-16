@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
-namespace YazılımYapımı
+namespace YazilimYapimi
 {
 	public partial class Alisveris : System.Web.UI.Page
 	{
@@ -71,7 +71,7 @@ namespace YazılımYapımı
 				stok.Parameters.AddWithValue("@p2",ent.UrunID);
 				stok.Parameters.AddWithValue("@p1",ent.Urunadet);
 				stok.ExecuteNonQuery();
-				SqlCommand para = new SqlCommand("Update KullaniciBilgi set KullaniciPara=@p1 WHERE KullaniciID=@p1",bgl.baglanti());
+				SqlCommand para = new SqlCommand("Update KullaniciBilgi set KullaniciPara=@p1 WHERE KullaniciID=@p2",bgl.baglanti());
 				para.Parameters.AddWithValue("@p2", a.KullaniciID);
 				para.Parameters.AddWithValue("@p1", a.Kullanicipara);
 				para.ExecuteNonQuery();

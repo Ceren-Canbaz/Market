@@ -7,7 +7,7 @@
 // </otomatik üretildi>
 //------------------------------------------------------------------------------
 
-namespace YazılımYapımı
+namespace YazilimYapimi
 {
 
 

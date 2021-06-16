@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 
-namespace YazılımYapımı
+namespace YazilimYapimi
 {
 	public class Baglanti
 	{

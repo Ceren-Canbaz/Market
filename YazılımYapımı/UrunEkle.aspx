@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UrunEkle.aspx.cs" Inherits="YazılımYapımı.UrunEkle" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UrunEkle.aspx.cs" Inherits="YazilimYapimi.UrunEkle" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
@@ -25,6 +25,5 @@
 		<br />
 			<asp:Label ID="Label5" runat="server"></asp:Label>
 		<br />
-		<asp:Button ID="Button1" runat="server" Text="Talep Oluştur" CssClass="btn btn-info " OnClick="Button1_Click"/>
 		</form>
 </asp:Content>
