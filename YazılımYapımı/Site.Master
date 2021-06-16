@@ -44,6 +44,7 @@
 			<ul class="nav navbar-nav">
 				<li><a href="Anasayfa.aspx">Home</a></li>
 				<li><a href="UrunEkle.aspx">Ürün Ekle</a></li>
+				<li><a href="SaticiUrunler.aspx">Ürünlerim</a></li>
 				<li><a href="ParaEkle.aspx">Para Ekle</a></li>
 				<li><a href="Login.aspx">Çıkış</a></li>
 

@@ -83,6 +83,8 @@
     <Content Include="Resimler\Petrol.jpg" />
     <Content Include="Resimler\Yulaf.jpg" />
     <Content Include="ParaTalep.aspx" />
+    <Content Include="SaticiUrunler.aspx" />
+    <Content Include="UrunDuzenle.aspx" />
     <Content Include="UrunEkle.aspx" />
     <Content Include="Urunler.aspx" />
     <Content Include="UrunTalep.aspx" />
@@ -135,6 +137,13 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SaticiUrunler.aspx.cs">
+      <DependentUpon>SaticiUrunler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SaticiUrunler.aspx.designer.cs">
+      <DependentUpon>SaticiUrunler.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -148,6 +157,13 @@
     </Compile>
     <Compile Include="ParaTalep.aspx.designer.cs">
       <DependentUpon>ParaTalep.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UrunDuzenle.aspx.cs">
+      <DependentUpon>UrunDuzenle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UrunDuzenle.aspx.designer.cs">
+      <DependentUpon>UrunDuzenle.aspx</DependentUpon>
     </Compile>
     <Compile Include="UrunEkle.aspx.cs">
       <DependentUpon>UrunEkle.aspx</DependentUpon>
