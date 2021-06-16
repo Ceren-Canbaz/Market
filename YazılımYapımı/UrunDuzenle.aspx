@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UrunDuzenle.aspx.cs" Inherits="YazılımYapımı.UrunDuzenle" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UrunDuzenle.aspx.cs" Inherits="YazilimYapimi.UrunDuzenle" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
@@ -23,10 +23,15 @@
                 <asp:TextBox ID="TxtFiyat" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
             <br />
+             <div>
+                <asp:Label for="TextBox1" runat="server" Text="Yeni Fiyat:"></asp:Label>
+                <br />
+                <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox>
+            </div>
             <div>
                 <asp:Label ID="lblrapor" runat="server"></asp:Label>
             </div>
         </div>
-        <asp:Button ID="Button1" runat="server" Text="Güncelle" CssClass="btn btn-info"/>
+        <asp:Button ID="Button1" runat="server" Text="Güncelle" CssClass="btn btn-info" OnClick="Button1_Click"/>
     </form>
 </asp:Content>
