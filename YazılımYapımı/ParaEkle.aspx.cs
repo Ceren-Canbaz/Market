@@ -31,6 +31,7 @@ namespace YazilimYapimi
 		{
 			double para;
 			para = Convert.ToDouble(TextBox1.Text);
+			string value = code.SelectedValue;
 			SqlCommand komut = new SqlCommand("insert into ParaTalep (KullaniciID,Para) values (@p1,@p2)", bgl.baglanti());
 			komut.Parameters.AddWithValue("@p1", ent.KullaniciID);
 			komut.Parameters.AddWithValue("@p2", para);

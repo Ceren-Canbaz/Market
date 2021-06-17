@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+	<div class="container">
 	<form id="Form1" runat="server">
 		<div class="form-group">
 			<div>
@@ -20,7 +21,13 @@
 				<asp:Label ID="Label1" runat="server"></asp:Label>
 				<br />
 				<asp:Button ID="Button1" runat="server" Text="Talep Oluştur" CssClass="btn btn-info" OnClick="Button1_Click" />
+
+			    <asp:DropDownList ID="code" runat="server" Height="35px" Width="125px">
+                    <asp:ListItem Value="USD">Dolar</asp:ListItem>
+                    <asp:ListItem Value="TL">Turk lira</asp:ListItem>
+                </asp:DropDownList>
 			</div>
 		</div>
 	</form>
+	</div>
 </asp:Content>

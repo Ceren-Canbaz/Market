@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
+using System.Xml;
+
+
 namespace YazilimYapimi
 {
 	public partial class Talep : System.Web.UI.Page
@@ -42,7 +45,30 @@ namespace YazilimYapimi
 				komut1.ExecuteNonQuery();
 				SqlDataReader dr1 = komut1.ExecuteReader();
 				Kullanici ent = new Kullanici();
-				while (dr1.Read())
+
+				string bugun = "https://tcmb.gov.tr/kurlar/today.xml";
+				var xmldoc = new XmlDocument();
+				xmldoc.Load(bugun);
+				DateTime tarih = Convert.ToDateTime(xmldoc.SelectSingleNode("//Tarih_Date").Attributes["Tarih"].Value);
+
+				string DOLAR = xmldoc.SelectSingleNode("Tarih_Date/Currency [@Kod='USD']/BanknoteSelling").InnerXml;
+				string EURO = xmldoc.SelectSingleNode("Tarih_Date/Currency [@Kod='EUR']/BanknoteSelling").InnerXml;
+				string POUND = xmldoc.SelectSingleNode("Tarih_Date/Currency [@Kod='GBP']/BanknoteSelling").InnerXml;
+				string KDİNAR = xmldoc.SelectSingleNode("Tarih_Date/Currency [@Kod='KWD']/BanknoteSelling").InnerXml;
+				string NKRONU = xmldoc.SelectSingleNode("Tarih_Date/Currency [@Kod='NOK']/BanknoteSelling").InnerXml;
+
+
+				string value = "";
+
+                switch (value)
+                {
+
+                    default:
+                        break;
+                }
+
+
+                while (dr1.Read())
 				{
 					
 					ent.KullaniciID = Convert.ToInt32(dr1["KullaniciID"].ToString());
