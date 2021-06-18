@@ -15,6 +15,7 @@ namespace YazilimYapimi
 		string islem = "";
 		string id = "";
 		string para = "";
+		string doviz = "";
 		Baglanti bgl = new Baglanti();
 		Kullanici k = new Kullanici();
 		protected void Page_Load(object sender, EventArgs e)
@@ -24,12 +25,25 @@ namespace YazilimYapimi
 				id = Request.QueryString["TalepID"];
 				islem = Request.QueryString["islem"];
 				para = Request.QueryString["para"];
+				doviz = Request.QueryString["doviz"];
+
 			}
 			SqlCommand komut = new SqlCommand("SELECT*FROM ParaTalep p inner join KullaniciBilgi k on k.KullaniciID=p.KullaniciID WHERE Durum=0", bgl.baglanti());
 			SqlDataReader dr = komut.ExecuteReader();
 			Repeater1.DataSource = dr;
 			Repeater1.DataBind();
 
+			//Dövizleri xml ile çekiyoruz.
+			string bugun = "https://tcmb.gov.tr/kurlar/today.xml";
+			var xmldoc = new XmlDocument();
+			xmldoc.Load(bugun);
+			DateTime tarih = Convert.ToDateTime(xmldoc.SelectSingleNode("//Tarih_Date").Attributes["Tarih"].Value);
+
+			string DOLAR = xmldoc.SelectSingleNode("Tarih_Date/Currency [@Kod='USD']/BanknoteSelling").InnerXml;
+			string EURO = xmldoc.SelectSingleNode("Tarih_Date/Currency [@Kod='EUR']/BanknoteSelling").InnerXml;
+			string POUND = xmldoc.SelectSingleNode("Tarih_Date/Currency [@Kod='GBP']/BanknoteSelling").InnerXml;
+			string KDİNAR = xmldoc.SelectSingleNode("Tarih_Date/Currency [@Kod='KWD']/BanknoteSelling").InnerXml;
+			string NKRONU = xmldoc.SelectSingleNode("Tarih_Date/Currency [@Kod='NOK']/BanknoteSelling").InnerXml;
 			if (islem == "sil")
 			{
 				SqlCommand sil = new SqlCommand("DELETE FROM ParaTalep WHERE TalepID=@p1", bgl.baglanti());
@@ -45,26 +59,12 @@ namespace YazilimYapimi
 				komut1.ExecuteNonQuery();
 				SqlDataReader dr1 = komut1.ExecuteReader();
 				Kullanici ent = new Kullanici();
-
-				string bugun = "https://tcmb.gov.tr/kurlar/today.xml";
-				var xmldoc = new XmlDocument();
-				xmldoc.Load(bugun);
-				DateTime tarih = Convert.ToDateTime(xmldoc.SelectSingleNode("//Tarih_Date").Attributes["Tarih"].Value);
-
-				string DOLAR = xmldoc.SelectSingleNode("Tarih_Date/Currency [@Kod='USD']/BanknoteSelling").InnerXml;
-				string EURO = xmldoc.SelectSingleNode("Tarih_Date/Currency [@Kod='EUR']/BanknoteSelling").InnerXml;
-				string POUND = xmldoc.SelectSingleNode("Tarih_Date/Currency [@Kod='GBP']/BanknoteSelling").InnerXml;
-				string KDİNAR = xmldoc.SelectSingleNode("Tarih_Date/Currency [@Kod='KWD']/BanknoteSelling").InnerXml;
-				string NKRONU = xmldoc.SelectSingleNode("Tarih_Date/Currency [@Kod='NOK']/BanknoteSelling").InnerXml;
-
-
-				string value = "";
-
-                switch (value)
+               
+				switch (doviz)
                 {
-
-                    default:
-                        break;
+					case "EUR":
+						
+						break;
                 }
 
 
@@ -75,7 +75,7 @@ namespace YazilimYapimi
 					ent.Kullanicipara= Convert.ToDouble(dr1["KullaniciPara"].ToString());
 				}
 				dr1.Close();
-				ent.Kullanicipara += Convert.ToDouble(para);
+				ent.Kullanicipara +=Convert.ToDouble(para);
 				SqlCommand onayla = new SqlCommand("UPDATE KullaniciBilgi set KullaniciPara=@p1 WHERE KullaniciID=@p2",bgl.baglanti());
 				onayla.Parameters.AddWithValue("@p1", ent.Kullanicipara);
 				onayla.Parameters.AddWithValue("@p2", ent.KullaniciID);

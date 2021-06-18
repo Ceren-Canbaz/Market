@@ -32,9 +32,10 @@ namespace YazilimYapimi
 			double para;
 			para = Convert.ToDouble(TextBox1.Text);
 			string value = code.SelectedValue;
-			SqlCommand komut = new SqlCommand("insert into ParaTalep (KullaniciID,Para) values (@p1,@p2)", bgl.baglanti());
+			SqlCommand komut = new SqlCommand("insert into ParaTalep (KullaniciID,Para,Doviz) values (@p1,@p2,@p3)", bgl.baglanti());
 			komut.Parameters.AddWithValue("@p1", ent.KullaniciID);
 			komut.Parameters.AddWithValue("@p2", para);
+			komut.Parameters.AddWithValue("@p3", code.SelectedValue.ToString());
 			komut.ExecuteNonQuery();
 			Label1.Text = "Talebiniz olusturuldu";
 			bgl.baglanti().Close();

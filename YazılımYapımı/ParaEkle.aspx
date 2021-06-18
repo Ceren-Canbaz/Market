@@ -24,7 +24,10 @@
 
 			    <asp:DropDownList ID="code" runat="server" Height="35px" Width="125px">
                     <asp:ListItem Value="USD">Dolar</asp:ListItem>
+                    <asp:ListItem Value="EUR">Euro</asp:ListItem>
                     <asp:ListItem Value="TL">Turk lira</asp:ListItem>
+                    <asp:ListItem Value="NOK">Norveç Kronu</asp:ListItem>
+                    <asp:ListItem Value="KWD">Kuveyt Dinarı</asp:ListItem>
                 </asp:DropDownList>
 			</div>
 		</div>

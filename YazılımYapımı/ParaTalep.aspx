@@ -9,6 +9,7 @@
 			<th>Kullanıcı Adı</th>
 			<th>Kullanıcı Ad Soyad</th>
 			<th>Talep</th>
+			<th>Döviz</th>
 			<th></th>
 			<th></th>
 
@@ -19,9 +20,10 @@
 							<td><%#Eval("KullaniciID")%></td>
 							<td><%#Eval("KullaniciAdi")%></td>
 							<td><%#Eval("KullaniciAdSoyad")%></td>
-							<td><%#Eval("Para")%> TL</td>
+							<td><%#Eval("Para")%></td>
+							<td><%#Eval("Doviz")%></td>
 							<td>
-								<a href="ParaTalep.aspx?TalepID=<%#Eval("TalepID")%>&islem=onayla&para=<%#Eval("Para")%>">
+								<a href="ParaTalep.aspx?TalepID=<%#Eval("TalepID")%>&islem=onayla&para=<%#Eval("Para")%>&doviz=<%#Eval("Doviz")%>">
 								<asp:Label ID="Label2" runat="server" Text="Onayla"></asp:Label></a>
 							</td>
 							<td>
