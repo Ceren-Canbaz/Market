@@ -8,7 +8,7 @@ namespace YazilimYapimi
 {
 	public class Baglanti
 	{
-		public SqlConnection baglanti()
+		public  SqlConnection baglanti()
 		{
 			//Data Source=DESKTOP-TTOQ6J4\SQLEXPRESS;Initial Catalog=YazilimYapimiMarket;Integrated Security=True ->cerenin veritabanı
 			SqlConnection baglan = new SqlConnection("Data Source=DESKTOP-TTOQ6J4\\SQLEXPRESS;Initial Catalog=YazilimYapimiMarket;Integrated Security=True");

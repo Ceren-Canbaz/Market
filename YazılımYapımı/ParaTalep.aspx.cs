@@ -66,8 +66,6 @@ namespace YazilimYapimi
 						
 						break;
                 }
-
-
                 while (dr1.Read())
 				{
 					

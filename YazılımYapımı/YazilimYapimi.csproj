@@ -106,6 +106,8 @@
     <Compile Include="Alisveris.aspx.designer.cs">
       <DependentUpon>Alisveris.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SatinAl.cs" />
+    <Compile Include="UrunBilgi.cs" />
     <Compile Include="Kullanici.cs" />
     <Compile Include="Anasayfa.aspx.cs">
       <DependentUpon>Anasayfa.aspx</DependentUpon>
