@@ -34,16 +34,10 @@ namespace YazilimYapimi
 			Repeater1.DataBind();
 
 			//Dövizleri xml ile çekiyoruz.
-			string bugun = "https://tcmb.gov.tr/kurlar/today.xml";
+			string path = "https://tcmb.gov.tr/kurlar/today.xml";
 			var xmldoc = new XmlDocument();
-			xmldoc.Load(bugun);
-			DateTime tarih = Convert.ToDateTime(xmldoc.SelectSingleNode("//Tarih_Date").Attributes["Tarih"].Value);
+			xmldoc.Load(path);
 
-			string DOLAR = xmldoc.SelectSingleNode("Tarih_Date/Currency [@Kod='USD']/BanknoteSelling").InnerXml;
-			string EURO = xmldoc.SelectSingleNode("Tarih_Date/Currency [@Kod='EUR']/BanknoteSelling").InnerXml;
-			string POUND = xmldoc.SelectSingleNode("Tarih_Date/Currency [@Kod='GBP']/BanknoteSelling").InnerXml;
-			string KDİNAR = xmldoc.SelectSingleNode("Tarih_Date/Currency [@Kod='KWD']/BanknoteSelling").InnerXml;
-			string NKRONU = xmldoc.SelectSingleNode("Tarih_Date/Currency [@Kod='NOK']/BanknoteSelling").InnerXml;
 			if (islem == "sil")
 			{
 				SqlCommand sil = new SqlCommand("DELETE FROM ParaTalep WHERE TalepID=@p1", bgl.baglanti());
@@ -59,15 +53,18 @@ namespace YazilimYapimi
 				komut1.ExecuteNonQuery();
 				SqlDataReader dr1 = komut1.ExecuteReader();
 				Kullanici ent = new Kullanici();
-               
-				switch (doviz)
+				string money = "1";
+
+				var xml = xmldoc.SelectSingleNode($"Tarih_Date/Currency [@Kod='{doviz}']/BanknoteSelling");
+
+
+				if (xml!=null)   //Para birimi TRY olursa işlemi '1' değeriyle yapıyoruz
                 {
-					case "EUR":
-						
-						break;
-                }
+					money = xml.InnerXml;
+				}
 
-
+				para = (decimal.Parse(para) * decimal.Parse(money.Replace('.',','))).ToString(); //Kullanıcının talebini dövizdeki kur değeriyle çarpıyoruz
+				
                 while (dr1.Read())
 				{
 					
