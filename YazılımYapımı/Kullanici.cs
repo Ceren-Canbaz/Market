@@ -8,6 +8,7 @@ namespace YazilimYapimi
 	public class Kullanici
 	{
 		private int urunID;
+		private int urunKategoriID;
 		private string urunad;
 		private double urunfiyat;
 		private int urunadet;
@@ -15,6 +16,8 @@ namespace YazilimYapimi
 		private string kullaniciad;
 		private double kullanicipara;
 		private int kullaniciID;
+		private int saticiID;
+		private int aliciID;
 		
 
 		public int UrunID { get => urunID; set => urunID = value; }
@@ -25,5 +28,8 @@ namespace YazilimYapimi
 		public string Kullaniciad { get => kullaniciad; set => kullaniciad = value; }
 		public double Kullanicipara { get => kullanicipara; set => kullanicipara = value; }
 		public int KullaniciID { get => kullaniciID; set => kullaniciID = value; }
+		public int UrunKategoriID { get => urunKategoriID; set => urunKategoriID = value; }
+		public int SaticiID { get => saticiID; set => saticiID = value; }
+		public int AliciID { get => aliciID; set => aliciID = value; }
 	}
 }

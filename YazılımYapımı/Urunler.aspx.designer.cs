@@ -42,6 +42,24 @@ namespace YazilimYapimi
 		protected global::System.Web.UI.WebControls.TextBox TextBox1;
 
 		/// <summary>
+		/// Label2 denetimi.
+		/// </summary>
+		/// <remarks>
+		/// Otomatik üretilmiş alan.
+		/// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label Label2;
+
+		/// <summary>
+		/// TextBox2 denetimi.
+		/// </summary>
+		/// <remarks>
+		/// Otomatik üretilmiş alan.
+		/// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox TextBox2;
+
+		/// <summary>
 		/// Button1 denetimi.
 		/// </summary>
 		/// <remarks>

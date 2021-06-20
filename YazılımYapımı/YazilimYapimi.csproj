@@ -12,8 +12,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>YazılımYapımı</RootNamespace>
-    <AssemblyName>YazılımYapımı</AssemblyName>
+    <RootNamespace>YazilimYapimi</RootNamespace>
+    <AssemblyName>YazilimYapimi</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -72,6 +72,7 @@
   <ItemGroup>
     <Content Include="Alisveris.aspx" />
     <Content Include="Anasayfa.aspx" />
+    <Content Include="BeklenenUrunler.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="LoginStyle.css" />
     <Content Include="Rapor.aspx" />
@@ -106,8 +107,14 @@
     <Compile Include="Alisveris.aspx.designer.cs">
       <DependentUpon>Alisveris.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BeklenenUrunler.aspx.cs">
+      <DependentUpon>BeklenenUrunler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BeklenenUrunler.aspx.designer.cs">
+      <DependentUpon>BeklenenUrunler.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SatinAl.cs" />
-    <Compile Include="UrunBilgi.cs" />
     <Compile Include="Kullanici.cs" />
     <Compile Include="Anasayfa.aspx.cs">
       <DependentUpon>Anasayfa.aspx</DependentUpon>

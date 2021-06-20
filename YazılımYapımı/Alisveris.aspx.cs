@@ -65,16 +65,7 @@ namespace YazilimYapimi
 			
 			if (ent.Urunadet >= a.Urunadet && a.Kullanicipara >=a.Urunfiyat)
 			{
-				a.Kullanicipara = (a.Kullanicipara) - (a.Urunfiyat);
-				ent.Urunadet = ent.Urunadet - a.Urunadet;
-				SqlCommand stok = new SqlCommand("UPDATE UrunDetay set UrunAdet=@p1 WHERE UrunID=@p2 ",bgl.baglanti());
-				stok.Parameters.AddWithValue("@p2",ent.UrunID);
-				stok.Parameters.AddWithValue("@p1",ent.Urunadet);
-				stok.ExecuteNonQuery();
-				SqlCommand para = new SqlCommand("Update KullaniciBilgi set KullaniciPara=@p1 WHERE KullaniciID=@p2",bgl.baglanti());
-				para.Parameters.AddWithValue("@p2", a.KullaniciID);
-				para.Parameters.AddWithValue("@p1", a.Kullanicipara);
-				para.ExecuteNonQuery();
+				SatinAl.SatinAlma(a,ent);
 				Button1.Visible = false;
 				lblrapor.Text = "Satın Alma işlemi Başarıyla gerçekleşti";
 				Yazdir(ent, a);
@@ -99,5 +90,6 @@ namespace YazilimYapimi
 			}
 			
 		}
+
 	}
 }

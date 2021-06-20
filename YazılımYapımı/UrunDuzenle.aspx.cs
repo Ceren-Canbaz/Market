@@ -15,21 +15,7 @@ namespace YazilimYapimi
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            UrunID = Request.QueryString["UrunID"].ToString();
-            SqlCommand komut = new SqlCommand("SELECT*FROM UrunDetay WHERE UrunID=@p1",bgl.baglanti());
-            komut.Parameters.AddWithValue("@p1", UrunID);
-            SqlDataReader dr = komut.ExecuteReader();
-            while(dr.Read())
-            {
-                Txtad.Text = dr["UrunAd"].ToString();
-                Txtid.Text = dr["UrunID"].ToString();
-                TxtFiyat.Text = dr["UrunFiyat"].ToString();
-                
-            }
-            dr.Close();
-            Txtid.Enabled = false;
-            Txtad.Enabled = false;
-            TxtFiyat.Enabled = false;
+            Yazdir();
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -39,34 +25,26 @@ namespace YazilimYapimi
             guncelleme.Parameters.AddWithValue("@p2", UrunID);
             guncelleme.ExecuteNonQuery();
             lblrapor.Text = "Güncellendi";
-            BeklenenUrun();
+            Yazdir();
+            SatinAl.BeklenenUrun();
         }
-        public void BeklenenUrun()
+        public void Yazdir()
 		{
-            UrunBilgi istenenurun = new UrunBilgi();
-           
-            SqlCommand komut = new SqlCommand("SELECT*FROM BeklenenUrun",bgl.baglanti());
+            UrunID = Request.QueryString["UrunID"].ToString();
+            SqlCommand komut = new SqlCommand("SELECT*FROM UrunDetay WHERE UrunID=@p1", bgl.baglanti());
+            komut.Parameters.AddWithValue("@p1", UrunID);
             SqlDataReader dr = komut.ExecuteReader();
-            while(dr.Read())
-			{
-                istenenurun.AliciID = Convert.ToInt32(dr["AliciID"].ToString());
-                istenenurun.UrunKategoriID = Convert.ToInt32(dr["UrunKategoriID"].ToString());
-                istenenurun.Fiyat = Convert.ToDouble(dr["Fiyat"].ToString());
-			}
-            List<UrunBilgi> urun = new List<UrunBilgi>();
-            SqlCommand urunler = new SqlCommand("SELECT*FROM UrunDetay WHERE Onay=1", bgl.baglanti());
-            SqlDataReader dr1 = urunler.ExecuteReader();
-            while (dr1.Read())
-			{
-                UrunBilgi urunbilgi = new UrunBilgi();
-                urunbilgi.SaticiID = Convert.ToInt32(dr1["KullaniciID"].ToString());
-                urunbilgi.UrunKategoriID = Convert.ToInt32(dr1["UrunKategoriID"].ToString());
-                urunbilgi.UrunID = Convert.ToInt32(dr1["UrunID"].ToString());
-                urunbilgi.Fiyat = Convert.ToDouble(dr1["UrunFiyat"].ToString());
-                urun.Add(urunbilgi);
-			}
-            var eslesenurun = urun.FirstOrDefault(u=>u.Fiyat==istenenurun.Fiyat&&u.UrunKategoriID==istenenurun.UrunKategoriID&&u.Adet>=istenenurun.Adet);
-            
+            while (dr.Read())
+            {
+                Txtad.Text = dr["UrunAd"].ToString();
+                Txtid.Text = dr["UrunID"].ToString();
+                TxtFiyat.Text = dr["UrunFiyat"].ToString();
+
+            }
+            dr.Close();
+            Txtid.Enabled = false;
+            Txtad.Enabled = false;
+            TxtFiyat.Enabled = false;
         }
     }
 }

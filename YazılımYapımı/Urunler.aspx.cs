@@ -47,10 +47,11 @@ namespace YazilimYapimi
 				}
 				else //eğer Alıcının istediği fiyatta ürün yoksa istek listesinde tutulacak 
 				{
-					SqlCommand talep = new SqlCommand("insert into BeklenenUrun values(@p1,@p2,@p3)",bgl.baglanti());
+					SqlCommand talep = new SqlCommand("insert into BeklenenUrun values(@p1,@p2,@p3,@p4)",bgl.baglanti());
 					talep.Parameters.AddWithValue("@p1", id);
 					talep.Parameters.AddWithValue("@p2",UrunKategoriID);
 					talep.Parameters.AddWithValue("@p3",TextBox1.Text);
+					talep.Parameters.AddWithValue("@p4",TextBox2.Text);
 					talep.ExecuteNonQuery();
 				}
 			}
