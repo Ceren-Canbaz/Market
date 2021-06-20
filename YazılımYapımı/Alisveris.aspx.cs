@@ -25,6 +25,7 @@ namespace YazilimYapimi
 				ent.Kullanicipara = Convert.ToDouble(dr["KullaniciPara"]);
 				ent.Urunadet = Convert.ToInt32(dr["UrunAdet"].ToString());
 				ent.Urunfiyat = Convert.ToDouble(dr["UrunFiyat"].ToString());
+				ent.UrunKategoriID = Convert.ToInt32(dr["UrunKategoriID"].ToString());
 			}
 			dr.Close();
 
@@ -42,20 +43,6 @@ namespace YazilimYapimi
 			dr1.Close();
 			Yazdir(ent, a);
 
-		}
-		public void Yazdir(Kullanici x, Kullanici y)
-		{
-			
-			Txtid.Text = x.UrunID.ToString();
-			Txtad.Text= x.Urunad;
-			Txtsatici.Text = x.Kullaniciad;
-			Txtmiktar.Text = x.Urunadet.ToString();
-			TxtFiyat.Text = x.Urunfiyat.ToString();
-			Txtid.Enabled = false;
-			Txtad.Enabled = false;
-			Txtsatici.Enabled = false;
-			Txtmiktar.Enabled = false;
-			TxtFiyat.Enabled = false;
 		}
 		protected void Button1_Click(object sender, EventArgs e)
 		{
@@ -78,6 +65,20 @@ namespace YazilimYapimi
 				lblrapor.Text = "Yetersiz Bakiye";
 			}
 			
+		}
+		public void Yazdir(Kullanici x, Kullanici y)
+		{
+
+			Txtid.Text = x.UrunID.ToString();
+			Txtad.Text = x.Urunad;
+			Txtsatici.Text = x.Kullaniciad;
+			Txtmiktar.Text = x.Urunadet.ToString();
+			TxtFiyat.Text = x.Urunfiyat.ToString();
+			Txtid.Enabled = false;
+			Txtad.Enabled = false;
+			Txtsatici.Enabled = false;
+			Txtmiktar.Enabled = false;
+			TxtFiyat.Enabled = false;
 		}
 
 	}
