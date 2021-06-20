@@ -10,12 +10,26 @@ namespace YazilimYapimi
 	public partial class BeklenenUrunler : System.Web.UI.Page
 	{
 		Baglanti bgl = new Baglanti();
+		string islem = "";
+		string id = "";
 		protected void Page_Load(object sender, EventArgs e)
 		{
 			SqlCommand listele = new SqlCommand("SELECT*FROM BeklenenUrun b inner join UrunKategori u on b.UrunKategoriID=u.UrunKategoriID",bgl.baglanti());
 			SqlDataReader dr = listele.ExecuteReader();
 			Repeater1.DataSource = dr;
 			Repeater1.DataBind();
+			if(Page.IsPostBack==false)
+			{
+				id = Request.QueryString["IstekID"];
+				islem = Request.QueryString["islem"];
+			}
+			if(islem=="iptal")
+			{
+				SqlCommand komut = new SqlCommand("DELETE FROM BeklenenUrun WHERE IstekID=@p1",bgl.baglanti());
+				komut.Parameters.AddWithValue("@p1", id);
+				komut.ExecuteNonQuery();
+				Response.Redirect("BeklenenUrunler.aspx");
+			}
 		}
 	}
 }

@@ -8,6 +8,7 @@
 					<th>İstenen Ürün</th>
 					<th>İstenen Fiyat</th>
 					<th>İstenen Adet</th>
+					<th>Durum</th>
 					<th></th>
 
 					<tbody>
@@ -17,9 +18,11 @@
 									<td><%#Eval("KategoriAd")%></td>
 									<td><%#Eval("Fiyat")%></td>
 									<td><%#Eval("Adet")%></td>
+									<td><%#Eval("Durum")%></td>
 									<td>
-
-										<asp:HyperLink NavigateUrl='<%#"~/BeklenenUrunler.aspx?IstekID="+Eval("IstekID")%>' ID="HyperLink2" CssClass="btn btn-success" runat="server">İptal Et</asp:HyperLink>
+										<a href="BeklenenUrunler.aspx?IstekID=<%#Eval("IstekID")%>&islem=iptal">
+											<asp:Label ID="Label1" runat="server" Text="İptal Et"></asp:Label>
+										</a>
 									</td>
 								</tr>
 							</ItemTemplate>
