@@ -69,6 +69,15 @@ namespace YazilimYapimi
 		protected global::System.Web.UI.WebControls.Button Button1;
 
 		/// <summary>
+		/// Label3 denetimi.
+		/// </summary>
+		/// <remarks>
+		/// Otomatik üretilmiş alan.
+		/// Değiştirmek için, alan bildirimini tasarımcı dosyasından arka plan kod dosyasına taşıyın.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label Label3;
+
+		/// <summary>
 		/// Repeater1 denetimi.
 		/// </summary>
 		/// <remarks>

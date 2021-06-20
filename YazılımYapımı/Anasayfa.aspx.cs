@@ -19,6 +19,7 @@ namespace YazilimYapimi
 			Repeater1.DataSource = dr;
 			Repeater1.DataBind();
 			bgl.baglanti().Close();
+			SatinAl.BeklenenUrun();
 			
 		}
 

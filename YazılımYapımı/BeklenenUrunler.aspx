@@ -3,6 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 	<form id="form1" runat="server">
+		<div class="container">
 			<table class="table table-bordered table-hover">
 				<tr>
 					<th>İstenen Ürün</th>
@@ -21,7 +22,7 @@
 									<td><%#Eval("Durum")%></td>
 									<td>
 										<a href="BeklenenUrunler.aspx?IstekID=<%#Eval("IstekID")%>&islem=iptal">
-											<asp:Label ID="Label1" runat="server" Text="İptal Et"></asp:Label>
+											<asp:Label ID="Label1" runat="server" Text="Sil"></asp:Label>
 										</a>
 									</td>
 								</tr>
@@ -30,6 +31,6 @@
 					</tbody>
 				</tr>
 			</table>
-		</div>
+		</div>									
 	</form>
 </asp:Content>

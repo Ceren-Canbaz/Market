@@ -19,8 +19,7 @@ namespace YazilimYapimi
 			urunyazdir.Parameters.AddWithValue("@p1", ent.UrunID);
 			SqlDataReader dr = urunyazdir.ExecuteReader();
 			while (dr.Read())
-			{
-				ent.Kullaniciad = dr["KullaniciAdSoyad"].ToString();
+			{ 
 				ent.Urunad = dr["UrunAd"].ToString();
 				ent.Kullaniciad = dr["KullaniciAdSoyad"].ToString();
 				ent.Kullanicipara = Convert.ToDouble(dr["KullaniciPara"]);
@@ -69,16 +68,6 @@ namespace YazilimYapimi
 				Button1.Visible = false;
 				lblrapor.Text = "Satın Alma işlemi Başarıyla gerçekleşti";
 				Yazdir(ent, a);
-				SqlCommand rapor = new SqlCommand("insert into Rapor (AliciAd,SaticiAd,UrunMiktar,UrunFiyat,UrunAd,Tarih,KalanPara)values(@p1,@p2,@p3,@p4,@p5,@p6,@p7)", bgl.baglanti());
-				rapor.Parameters.AddWithValue("@p1", a.Kullaniciad);
-				rapor.Parameters.AddWithValue("@p2", ent.Kullaniciad);
-				rapor.Parameters.AddWithValue("@p3", a.Urunadet);
-				rapor.Parameters.AddWithValue("@p4", ent.Urunfiyat);
-				rapor.Parameters.AddWithValue("@p5", ent.Urunad);
-				rapor.Parameters.AddWithValue("@p6", DateTime.Now);
-				rapor.Parameters.AddWithValue("@p7", a.Kullanicipara);
-				rapor.ExecuteNonQuery();
-
 			}
 			else if(ent.Urunadet < a.Urunadet)
 			{

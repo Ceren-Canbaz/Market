@@ -13,6 +13,8 @@
 			<br />
 			<asp:Button ID="Button1" runat="server" Text="Filtrele" OnClick="Button1_Click" />
 			<br />
+			<asp:Label ID="Label3" runat="server"></asp:Label>
+			<br />
 			<table class="table table-bordered table-hover">
 				<tr>
 					<th>Satıcı</th>

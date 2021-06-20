@@ -18,6 +18,7 @@ namespace YazilimYapimi
 		private int kullaniciID;
 		private int saticiID;
 		private int aliciID;
+		private int istekID;
 		
 
 		public int UrunID { get => urunID; set => urunID = value; }
@@ -31,5 +32,6 @@ namespace YazilimYapimi
 		public int UrunKategoriID { get => urunKategoriID; set => urunKategoriID = value; }
 		public int SaticiID { get => saticiID; set => saticiID = value; }
 		public int AliciID { get => aliciID; set => aliciID = value; }
+		public int IstekID { get => istekID; set => istekID = value; }
 	}
 }

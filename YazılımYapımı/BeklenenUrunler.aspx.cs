@@ -12,9 +12,12 @@ namespace YazilimYapimi
 		Baglanti bgl = new Baglanti();
 		string islem = "";
 		string id = "";
+		string kullaniciID = "";
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			SqlCommand listele = new SqlCommand("SELECT*FROM BeklenenUrun b inner join UrunKategori u on b.UrunKategoriID=u.UrunKategoriID",bgl.baglanti());
+			kullaniciID = Session["KullaniciID"].ToString();
+			SqlCommand listele = new SqlCommand("SELECT*FROM BeklenenUrun b inner join UrunKategori u on b.UrunKategoriID=u.UrunKategoriID WHERE AliciID=@p1",bgl.baglanti());
+			listele.Parameters.AddWithValue("@p1",kullaniciID);
 			SqlDataReader dr = listele.ExecuteReader();
 			Repeater1.DataSource = dr;
 			Repeater1.DataBind();

@@ -22,6 +22,7 @@
 			<asp:Label ID="Label4" runat="server" Text="Kg/Lt Fiyatı:"></asp:Label>
 			<asp:TextBox ID="Fiyat" runat="server" CssClass="form-control"></asp:TextBox>
 		</div>
+		<asp:Button ID="Button1" runat="server" Text="Button" CssClass="btn btn-info" OnClick="Button1_Click" />
 		<br />
 			<asp:Label ID="Label5" runat="server"></asp:Label>
 		<br />
