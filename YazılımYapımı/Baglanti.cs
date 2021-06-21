@@ -12,7 +12,7 @@ namespace YazilimYapimi
 		{
 			//Data Source=DESKTOP-TTOQ6J4\\SQLEXPRESS;Initial Catalog=YazilimYapimiMarket;Integrated Security=True ->cerenin veritabanı
 			//Data Source = SNC; Initial Catalog = YazilimYapimiMarket; Integrated Security = True -> senanın
-			SqlConnection baglan = new SqlConnection("Data Source = SNC; Initial Catalog = YazilimYapimiMarket; Integrated Security = True");
+			SqlConnection baglan = new SqlConnection("Data Source=DESKTOP-TTOQ6J4\\SQLEXPRESS;Initial Catalog=YazilimYapimiMarket;Integrated Security=True");
 			baglan.Open();
 			return baglan;
 		}
