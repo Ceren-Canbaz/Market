@@ -1,4 +1,4 @@
-# YazilimYapimiVize
+# YazilimYapimi
 ## Contents
 1. [General Info](#general-info)
 2. [Technologies](#technologies)
@@ -11,3 +11,4 @@
 - ASP.net
 - C#
 - Bootstrap
+-Sql 
