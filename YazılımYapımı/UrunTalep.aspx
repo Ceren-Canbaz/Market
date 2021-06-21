@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+	<div class="container">
 	<table class="table table-bordered table-hover">
 		<tr>
 			<th>Kullanıcı</th>
@@ -36,4 +37,5 @@
 		</tr>
 
 	</table>
+	</div>
 </asp:Content>

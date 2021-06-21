@@ -4,6 +4,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
 	<link href="LoginStyle.css" rel="stylesheet" />
+	<div class="container">
 	<table class="table table-bordered table-hover">
 		<tr>
 			<th style="width:10px"></th>
@@ -29,4 +30,5 @@
 		</tr>
 
 	</table>
+		</div>
 </asp:Content>
