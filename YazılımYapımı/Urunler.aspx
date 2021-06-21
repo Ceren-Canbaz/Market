@@ -11,7 +11,7 @@
 			<asp:Label ID="Label2" runat="server" Text="Adet Belirleyin"></asp:Label>
 			<asp:TextBox ID="TextBox2" CssClass="form-control" runat="server"></asp:TextBox>
 			<br />
-			<asp:Button ID="Button1" runat="server" Text="Filtrele" OnClick="Button1_Click" />
+			<asp:Button ID="Button1" runat="server" Text="Filtrele" OnClick="Button1_Click" CssClass="btn btn-info"/>
 			<br />
 			<asp:Label ID="Label3" runat="server"></asp:Label>
 			<br />

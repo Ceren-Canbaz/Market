@@ -22,6 +22,7 @@ namespace YazilimYapimi
 			{ 
 				ent.Urunad = dr["UrunAd"].ToString();
 				ent.Kullaniciad = dr["KullaniciAdSoyad"].ToString();
+				ent.KullaniciID = Convert.ToInt32(dr["KullaniciID"].ToString());
 				ent.Kullanicipara = Convert.ToDouble(dr["KullaniciPara"]);
 				ent.Urunadet = Convert.ToInt32(dr["UrunAdet"].ToString());
 				ent.Urunfiyat = Convert.ToDouble(dr["UrunFiyat"].ToString());

@@ -42,12 +42,13 @@ namespace YazilimYapimi
 			ekle.Parameters.AddWithValue("@p2",1);
 			ekle.ExecuteNonQuery();
 
-			SqlCommand rapor = new SqlCommand("insert into KullaniciRapor(KullaniciID,Tarih,UrunKategoriID,Fiyat,Miktar) values(@p1,@p2,@p3,@p4,@p5)",bgl.baglanti());
+			SqlCommand rapor = new SqlCommand("insert into KullaniciRapor(AliciID,Tarih,UrunKategoriID,Fiyat,Miktar,SaticiID) values(@p1,@p2,@p3,@p4,@p5,@p6)",bgl.baglanti());
 			rapor.Parameters.AddWithValue("@p1", alici.KullaniciID);
 			rapor.Parameters.AddWithValue("@p2", DateTime.Now);
 			rapor.Parameters.AddWithValue("@p3", satici.UrunKategoriID);
 			rapor.Parameters.AddWithValue("@p4", alici.Urunfiyat);
 			rapor.Parameters.AddWithValue("@p5", alici.Urunadet);
+			rapor.Parameters.AddWithValue("@p6", satici.KullaniciID);
 			rapor.ExecuteNonQuery();
 		}
 		public static void BeklenenUrun()

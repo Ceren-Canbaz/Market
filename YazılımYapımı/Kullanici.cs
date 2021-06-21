@@ -19,7 +19,6 @@ namespace YazilimYapimi
 		private int saticiID;
 		private int aliciID;
 		private int istekID;
-		
 
 		public int UrunID { get => urunID; set => urunID = value; }
 		public string Urunad { get => urunad; set => urunad = value; }
