@@ -33,7 +33,7 @@ namespace YazilimYapimi
 
             if (dr.Read())
             {
-                Response.Redirect("UrunTalep.aspx");
+                Response.Redirect("ParaTalep.aspx");
             }
             else if (dr2.Read())
             {

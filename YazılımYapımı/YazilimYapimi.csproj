@@ -74,7 +74,6 @@
     <Content Include="AlisverisRapor.aspx" />
     <Content Include="Anasayfa.aspx" />
     <Content Include="BeklenenUrunler.aspx" />
-    <Content Include="KullaniciRapor.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="LoginStyle.css" />
     <Content Include="Rapor.aspx" />
@@ -122,13 +121,6 @@
     </Compile>
     <Compile Include="BeklenenUrunler.aspx.designer.cs">
       <DependentUpon>BeklenenUrunler.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="KullaniciRapor.aspx.cs">
-      <DependentUpon>KullaniciRapor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="KullaniciRapor.aspx.designer.cs">
-      <DependentUpon>KullaniciRapor.aspx</DependentUpon>
     </Compile>
     <Compile Include="SatinAl.cs" />
     <Compile Include="Kullanici.cs" />

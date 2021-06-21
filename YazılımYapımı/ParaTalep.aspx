@@ -11,8 +11,7 @@
 			<th>Kullanıcı Ad Soyad</th>
 			<th>Talep</th>
 			<th>Döviz</th>
-			<th></th>
-			<th></th>
+		</tr>
 
 			<tbody>
 				<asp:Repeater ID="Repeater1" runat="server">
@@ -25,17 +24,17 @@
 							<td><%#Eval("Doviz")%></td>
 							<td>
 								<a href="ParaTalep.aspx?TalepID=<%#Eval("TalepID")%>&islem=onayla&para=<%#Eval("Para")%>&doviz=<%#Eval("Doviz")%>">
-								<asp:Label ID="Label2" runat="server" Text="Onayla"></asp:Label></a>
+								<asp:Label ID="Label2" runat="server" Text="Onayla" ForeColor="MediumSeaGreen"></asp:Label></a>
 							</td>
 							<td>
 							<a href="ParaTalep.aspx?TalepID=<%#Eval("TalepID")%>&islem=sil">
-								<asp:Label ID="Label1" runat="server" Text="Sil"></asp:Label></a>
+								<asp:Label ID="Label1" runat="server" Text="Sil" ForeColor="Red"></asp:Label></a>
 							</td>
 						</tr>
 					</ItemTemplate>
 				</asp:Repeater>
 			</tbody>
-		</tr>
+		
 
 	</table>
 	</div>

@@ -47,7 +47,7 @@
 				<li><a href="SaticiUrunler.aspx">Ürünlerim</a></li>
 				<li><a href="ParaEkle.aspx">Para Ekle</a></li>
 				<li><a href="BeklenenUrunler.aspx">İstek Listem</a></li>
-				<li><a href="KullaniciRapor.aspx">Rapor</a></li>
+				<li><a href="AlisverisRapor.aspx">Rapor</a></li>
 				<li><a href="Login.aspx">Çıkış</a></li>
 
 			</ul>

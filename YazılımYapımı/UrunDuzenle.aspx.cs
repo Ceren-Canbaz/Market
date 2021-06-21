@@ -20,9 +20,10 @@ namespace YazilimYapimi
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            SqlCommand guncelleme = new SqlCommand("UPDATE UrunDetay set UrunFiyat=@p1 WHERE UrunID=@p2", bgl.baglanti());
+            SqlCommand guncelleme = new SqlCommand("UPDATE UrunDetay set UrunFiyat=@p1 , UrunAdet=@p3 WHERE UrunID=@p2", bgl.baglanti());
             guncelleme.Parameters.AddWithValue("@p1", TextBox1.Text);
             guncelleme.Parameters.AddWithValue("@p2", UrunID);
+            guncelleme.Parameters.AddWithValue("@p3", TextBox2.Text);
             guncelleme.ExecuteNonQuery();
             lblrapor.Text = "Güncellendi";
             Yazdir();
@@ -39,6 +40,7 @@ namespace YazilimYapimi
                 Txtad.Text = dr["UrunAd"].ToString();
                 Txtid.Text = dr["UrunID"].ToString();
                 TxtFiyat.Text = dr["UrunFiyat"].ToString();
+                TextBox2.Text = dr["UrunAdet"].ToString();
 
             }
             dr.Close();

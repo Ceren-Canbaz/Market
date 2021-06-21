@@ -24,6 +24,12 @@
                 <asp:TextBox ID="TxtFiyat" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
             <br />
+            <div>
+                <asp:Label for="TextBox2" runat="server" Text="Adet:"></asp:Label>
+                <br />
+                <asp:TextBox ID="TextBox2" runat="server" CssClass="form-control"></asp:TextBox>
+            </div>
+            <br />
              <div>
                 <asp:Label for="TextBox1" runat="server" Text="Yeni Fiyat:"></asp:Label>
                 <br />

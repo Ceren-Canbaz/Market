@@ -30,6 +30,7 @@ namespace YazilimYapimi
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+			//rapor için istenen zaman aralığını alıp kullanıcının bu süredeki hareketlerini gösteriyoruz
 			string baslangic = String.Format("{0}", Request.Form["Text1"]);
 			string bitis = String.Format("{0}", Request.Form["Text2"]);
 			DateTime baslangic1 = Convert.ToDateTime(baslangic);
