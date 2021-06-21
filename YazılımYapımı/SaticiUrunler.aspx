@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <div class="container">
     <table class="table table-bordered table-hover">
         <tr>
             <th>Ürün</th>
@@ -16,7 +17,7 @@
                     <td><%#Eval("UrunFiyat")%> TL</td>
                     <td>
 
-                <asp:HyperLink NavigateUrl='<%#"~/UrunDuzenle.aspx?UrunID="+Eval("UrunID")%>' ID="HyperLink2" CssClass="btn btn-success" runat="server">Devam Et</asp:HyperLink>
+                <asp:HyperLink NavigateUrl='<%#"~/UrunDuzenle.aspx?UrunID="+Eval("UrunID")%>' ID="HyperLink2" CssClass="btn btn-info" runat="server">Düzenle</asp:HyperLink>
                     </td>
                 </tr>
                         </ItemTemplate>
@@ -24,4 +25,5 @@
             </tbody>
         </tr>
     </table>
+    </div>
 </asp:Content>

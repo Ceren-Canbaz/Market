@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Alisveris.aspx" />
+    <Content Include="AlisverisRapor.aspx" />
     <Content Include="Anasayfa.aspx" />
     <Content Include="BeklenenUrunler.aspx" />
     <Content Include="Login.aspx" />
@@ -106,6 +107,13 @@
     </Compile>
     <Compile Include="Alisveris.aspx.designer.cs">
       <DependentUpon>Alisveris.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AlisverisRapor.aspx.cs">
+      <DependentUpon>AlisverisRapor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlisverisRapor.aspx.designer.cs">
+      <DependentUpon>AlisverisRapor.aspx</DependentUpon>
     </Compile>
     <Compile Include="BeklenenUrunler.aspx.cs">
       <DependentUpon>BeklenenUrunler.aspx</DependentUpon>
